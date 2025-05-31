@@ -141,13 +141,19 @@ export default function Home() {
               </div>
               <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                 <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                  <Link
-                    href="/items/lost"
-                    className="flex items-center justify-center rounded-md border border-transparent bg-black px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 sm:px-8"
-                  >
-                    <MagnifyingGlassIcon className="h-5 w-5 mr-2" />
-                    Browse Lost Items
-                  </Link>
+                <Link
+  href="/items/lost"
+  className="flex items-center justify-center rounded-md text-base font-medium text-black shadow-sm hover:bg-gray-100 sm:px-8"
+>
+  <button className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white">
+    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,black_0%,white_50%,black_100%)]" />
+    <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-white px-3 py-1 text-sm font-medium text-black backdrop-blur-3xl">
+      <MagnifyingGlassIcon className="h-5 w-5 mr-2" />
+      Browse Lost Items
+    </span>
+  </button>
+</Link>
+
                   <Link
                     href="/items/post"
                     className="flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-4 py-3 text-base font-medium text-black shadow-sm hover:bg-gray-200 sm:px-8"
