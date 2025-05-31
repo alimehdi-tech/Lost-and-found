@@ -147,7 +147,7 @@ export default function ItemDetail() {
           <div className="text-center">
             <h1 className="text-2xl font-bold text-gray-900 mb-4">Item Not Found</h1>
             <p className="text-gray-600 mb-8">{error}</p>
-            <Link href="/items" className="btn-primary">
+            <Link href="/items" className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded">
               Browse Items
             </Link>
           </div>
@@ -376,7 +376,7 @@ export default function ItemDetail() {
                     <>
                       <button
                         onClick={handleEdit}
-                        className="btn-primary w-full"
+                        className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded w-full flex items-center"
                       >
                         <PencilIcon className="h-4 w-4 mr-2" />
                         Edit Item
@@ -405,7 +405,7 @@ export default function ItemDetail() {
                       {item.type === 'found' ? (
                         <button
                           onClick={handleClaim}
-                          className="btn-primary w-full"
+                          className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded w-full flex items-center"
                         >
                           <CheckCircleIcon className="h-4 w-4 mr-2" />
                           Claim This Item
@@ -413,7 +413,7 @@ export default function ItemDetail() {
                       ) : (
                         <button
                          onClick={() => router.push(`/chat?itemId=${id}&otherUserId=${item.postedBy._id}`)}
-                          className="btn-primary w-full"
+                          className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded w-full flex items-center"
                         >
                           <ChatBubbleLeftRightIcon className="h-4 w-4 mr-2" />
                           I Found This Item
