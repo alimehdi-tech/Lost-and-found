@@ -129,7 +129,7 @@ export default function LostItems() {
                   <input
                     type="text"
                     placeholder="Search by title, description, or tags..."
-                    className="form-input pl-10"
+                    className="form-input pl-10 border-gray-300"
                     value={filters.search}
                     onChange={(e) => handleFilterChange('search', e.target.value)}
                   />
@@ -142,7 +142,7 @@ export default function LostItems() {
                   Category
                 </label>
                 <select
-                  className="form-select"
+                  className="form-select border-gray-300"
                   value={filters.category}
                   onChange={(e) => handleFilterChange('category', e.target.value)}
                 >
@@ -162,7 +162,7 @@ export default function LostItems() {
                 <input
                   type="text"
                   placeholder="e.g., Library, Cafeteria"
-                  className="form-input"
+                  className="form-input border-gray-300"
                   value={filters.location}
                   onChange={(e) => handleFilterChange('location', e.target.value)}
                 />
@@ -175,7 +175,7 @@ export default function LostItems() {
                   Sort by:
                 </label>
                 <select
-                  className="form-select"
+                  className="form-select border-gray-300"
                   value={filters.sortBy}
                   onChange={(e) => handleFilterChange('sortBy', e.target.value)}
                 >
@@ -185,7 +185,7 @@ export default function LostItems() {
                   <option value="views">Most Viewed</option>
                 </select>
                 <select
-                  className="form-select"
+                  className="form-select border-gray-300"
                   value={filters.sortOrder}
                   onChange={(e) => handleFilterChange('sortOrder', e.target.value)}
                 >
@@ -194,9 +194,9 @@ export default function LostItems() {
                 </select>
               </div>
 
-              <button type="submit" className="btn-primary">
+              <button type="submit" className="flex items-center bg-black text-white hover:bg-gray-900 px-4 py-2 rounded">
                 <FunnelIcon className="h-4 w-4 mr-2" />
-                Apply Filters
+                  Apply Filters
               </button>
             </div>
           </form>
