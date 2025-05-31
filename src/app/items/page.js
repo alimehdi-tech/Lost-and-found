@@ -141,14 +141,14 @@ export default function AllItems() {
               <input
                 type="text"
                 placeholder="Search items by title, description, or tags..."
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 "
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
             </div>
             <button
               type="submit"
-              className="btn-primary"
+              className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded"
             >
               Search
             </button>
@@ -255,7 +255,7 @@ export default function AllItems() {
             {loading ? 'Loading...' : `Showing ${items.length} of ${pagination.total} items`}
           </p>
           <div className="flex space-x-2">
-            <Link href="/items/post" className="btn-primary">
+            <Link href="/items/post" className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded">
               Post New Item
             </Link>
           </div>
@@ -397,7 +397,7 @@ export default function AllItems() {
                 ? 'Try adjusting your search criteria or filters.'
                 : 'No items have been posted yet.'}
             </p>
-            <Link href="/items/post" className="btn-primary">
+            <Link href="/items/post" className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded">
               Post First Item
             </Link>
           </div>

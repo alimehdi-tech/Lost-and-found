@@ -118,7 +118,7 @@ export default function Navbar() {
                 {/* Post item button */}
                 <Link
                   href="/items/post"
-                  className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded hidden sm:inline-flex"
+                  className="bg-black text-white flex items-center hover:bg-gray-900 px-4 py-2 rounded hidden sm:inline-flex"
                 >
                   <PlusIcon className="h-4 w-4 mr-2" />
                   Post Item
@@ -311,13 +311,12 @@ export default function Navbar() {
                   ))}
                 </div>
                 {session && (
-                  <div className="py-6">
+                  <div className="py-6 flex w-full">
                     <Link
                       href="/items/post"
-                      className="btn-primary w-full justify-center"
+                      className="bg-black text-white text-center hover:bg-gray-900 px-4 py-2 w-full rounded"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      <PlusIcon className="h-4 w-4 mr-2" />
                       Post Item
                     </Link>
                   </div>
