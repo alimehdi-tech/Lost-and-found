@@ -12,6 +12,7 @@ import {
   ChatBubbleLeftRightIcon
 } from '@heroicons/react/24/outline';
 import Navbar from '@/components/layout/Navbar';
+import TipsForSuccess from '@/components/layout/tips';
 
 export default function Dashboard() {
   const { data: session } = useSession();
@@ -318,7 +319,7 @@ export default function Dashboard() {
           </div>
 
           {/* Quick Actions & Tips */}
-          <div className="space-y-6">
+          <div className="space-y-6 flex justify-center flex-col items-center">
             {/* Quick Actions */}
             <div className="card">
               <div className="card-header">
@@ -362,31 +363,7 @@ export default function Dashboard() {
             </div>
 
             {/* Tips */}
-            <div className="card">
-              <div className="card-header">
-                <h3 className="text-lg font-medium text-gray-900">Tips for Success</h3>
-              </div>
-              <div className="card-body">
-                <div className="space-y-3 text-sm text-gray-600">
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full mt-2 mr-3"></div>
-                    <p>Include clear photos and detailed descriptions</p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full mt-2 mr-3"></div>
-                    <p>Specify exact location where item was lost/found</p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full mt-2 mr-3"></div>
-                    <p>Respond quickly to messages and claims</p>
-                  </div>
-                  <div className="flex items-start">
-                    <div className="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full mt-2 mr-3"></div>
-                    <p>Mark items as resolved when found/returned</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <TipsForSuccess/>
           </div>
         </div>
       </div>

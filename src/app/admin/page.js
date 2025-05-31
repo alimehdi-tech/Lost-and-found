@@ -11,10 +11,8 @@ import {
   CheckCircleIcon,
   ClockIcon,
   EyeIcon,
-  DocumentChartBarIcon,
-  UsersIcon,
-  ShoppingBagIcon,
-  ClipboardDocumentListIcon
+  ArchiveBoxIcon,
+  FunnelIcon
 } from '@heroicons/react/24/outline';
 import AdminLayout from '@/components/admin/AdminLayout';
 
