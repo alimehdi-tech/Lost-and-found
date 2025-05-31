@@ -129,7 +129,7 @@ export default function LostItems() {
                   <input
                     type="text"
                     placeholder="Search by title, description, or tags..."
-                    className="form-input pl-10"
+                    className="form-input pl-10 border-gray-300"
                     value={filters.search}
                     onChange={(e) => handleFilterChange('search', e.target.value)}
                   />
