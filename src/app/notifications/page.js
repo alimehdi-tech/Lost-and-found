@@ -209,7 +209,7 @@ export default function Notifications() {
       console.error('Error clearing notifications:', error);
     }
   };
-
+  
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const now = new Date();
