@@ -196,7 +196,7 @@ export default function Dashboard() {
               <div className="card-header">
                 <div className="flex justify-between items-center">
                   <h3 className="text-lg font-medium text-gray-900">Recent Posts</h3>
-                  <Link href="/items/post" className="btn-primary">
+                  <Link href="/items/post" className="flex items-center w-auto bg-black text-white hover:bg-gray-900 px-4 py-2 rounded">
                     <PlusIcon className="h-4 w-4 mr-2" />
                     New Post
                   </Link>
@@ -267,8 +267,8 @@ export default function Dashboard() {
                     <p className="mt-1 text-sm text-gray-500">
                       Get started by posting your first lost or found item.
                     </p>
-                    <div className="mt-6">
-                      <Link href="/items/post" className="btn-primary">
+                    <div className="mt-6 flex justify-center">
+                      <Link href="/items/post" className="flex items-center w-auto bg-black text-white hover:bg-gray-900 px-4 py-2 rounded">
                         <PlusIcon className="h-4 w-4 mr-2" />
                         Post Your First Item
                       </Link>
@@ -369,19 +369,19 @@ export default function Dashboard() {
               <div className="card-body">
                 <div className="space-y-3 text-sm text-gray-600">
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
+                    <div className="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full mt-2 mr-3"></div>
                     <p>Include clear photos and detailed descriptions</p>
                   </div>
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
+                    <div className="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full mt-2 mr-3"></div>
                     <p>Specify exact location where item was lost/found</p>
                   </div>
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
+                    <div className="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full mt-2 mr-3"></div>
                     <p>Respond quickly to messages and claims</p>
                   </div>
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3"></div>
+                    <div className="flex-shrink-0 w-2 h-2 bg-gray-500 rounded-full mt-2 mr-3"></div>
                     <p>Mark items as resolved when found/returned</p>
                   </div>
                 </div>
