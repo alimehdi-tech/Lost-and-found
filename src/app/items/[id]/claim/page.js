@@ -280,7 +280,7 @@ export default function ClaimItem() {
                 name="message"
                 rows={4}
                 required
-                className="form-textarea"
+                className="form-textarea border-gray-300 rounded-md shadow-sm"
                 placeholder="Please provide detailed information about why this item belongs to you. Include specific details that only the owner would know..."
                 value={formData.message}
                 onChange={handleInputChange}
@@ -304,7 +304,7 @@ export default function ClaimItem() {
                     <input
                       type="text"
                       required
-                      className="form-input"
+                      className="form-input border-gray-300"
                       placeholder="Your answer..."
                       value={qa.answer}
                       onChange={(e) => handleVerificationChange(index, e.target.value)}
@@ -377,14 +377,14 @@ export default function ClaimItem() {
             <button
               type="button"
               onClick={() => router.back()}
-              className="btn-secondary"
+              className="bg-gray-200 text-gray-800 hover:bg-gray-300 px-4 py-2 rounded"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={submitting}
-              className="btn-primary"
+              className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded"
             >
               {submitting ? (
                 <div className="flex items-center">
