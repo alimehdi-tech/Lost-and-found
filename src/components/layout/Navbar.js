@@ -17,6 +17,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { useUserStatus } from '@/hooks/useUserStatus';
 import { useNotifications } from '@/components/providers/NotificationProvider';
+import Image from 'next/image';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -70,12 +71,10 @@ export default function Navbar() {
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <Link href="/" className="flex items-center">
-                <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">LF</span>
-                </div>
-                {/* <span className="ml-2 text-xl font-bold text-gray-900">
-                  UMT Lost & Found
-                </span> */}
+               
+              <Image src="/logo.png" width={100} height={50} alt="logo" />
+
+
               </Link>
             </div>
 
