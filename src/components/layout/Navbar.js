@@ -94,6 +94,19 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* Search bar */}
+          {/* <div className="flex-1 max-w-lg mx-8 hidden lg:block">
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+              </div>
+              <input
+                type="text"
+                placeholder="Search lost or found items..."
+                className="block w-[85%] pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+              />
+            </div>
+          </div> */}
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
@@ -107,7 +120,7 @@ export default function Navbar() {
                 {/* Post item button */}
                 <Link
                   href="/items/post"
-                  className="btn-primary hidden sm:inline-flex"
+                  className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded hidden sm:inline-flex"
                 >
                   <PlusIcon className="h-4 w-4 mr-2" />
                   Post Item
@@ -115,7 +128,7 @@ export default function Navbar() {
 
                 {/* Notifications */}
                 <Popover className="relative">
-                  <Popover.Button className="relative p-2 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                  <Popover.Button className="relative p-2 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2">
                     <BellIcon className="h-6 w-6" />
                     {unreadCount > 0 && (
                       <span className="absolute -top-1 -right-1 h-5 w-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
@@ -171,7 +184,7 @@ export default function Navbar() {
                           <div className="mt-3 pt-3 border-t border-gray-200">
                             <Link
                               href="/notifications"
-                              className="text-sm text-blue-600 hover:text-blue-500"
+                              className="text-sm text-gray-800 hover:text-gray-500"
                             >
                               View all notifications
                             </Link>
@@ -184,7 +197,7 @@ export default function Navbar() {
 
                 {/* User menu */}
                 <Popover className="relative">
-                  <Popover.Button className="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                  <Popover.Button className="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2">
                     {session.user.avatar ? (
                       <img
                         className="h-8 w-8 rounded-full"
@@ -249,7 +262,7 @@ export default function Navbar() {
                 </Link>
                 <Link
                   href="/auth/signup"
-                  className="btn-primary"
+                  className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded"
                 >
                   Sign up
                 </Link>
@@ -260,7 +273,7 @@ export default function Navbar() {
             <div className="md:hidden">
               <button
                 type="button"
-                className="p-2 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                className="p-2 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2"
                 onClick={() => setMobileMenuOpen(true)}
               >
                 <Bars3Icon className="h-6 w-6" />
