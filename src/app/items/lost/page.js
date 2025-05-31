@@ -142,7 +142,7 @@ export default function LostItems() {
                   Category
                 </label>
                 <select
-                  className="form-select"
+                  className="form-select border-gray-300"
                   value={filters.category}
                   onChange={(e) => handleFilterChange('category', e.target.value)}
                 >
@@ -162,7 +162,7 @@ export default function LostItems() {
                 <input
                   type="text"
                   placeholder="e.g., Library, Cafeteria"
-                  className="form-input"
+                  className="form-input border-gray-300"
                   value={filters.location}
                   onChange={(e) => handleFilterChange('location', e.target.value)}
                 />
@@ -175,7 +175,7 @@ export default function LostItems() {
                   Sort by:
                 </label>
                 <select
-                  className="form-select"
+                  className="form-select border-gray-300"
                   value={filters.sortBy}
                   onChange={(e) => handleFilterChange('sortBy', e.target.value)}
                 >
@@ -185,7 +185,7 @@ export default function LostItems() {
                   <option value="views">Most Viewed</option>
                 </select>
                 <select
-                  className="form-select"
+                  className="form-select border-gray-300"
                   value={filters.sortOrder}
                   onChange={(e) => handleFilterChange('sortOrder', e.target.value)}
                 >
