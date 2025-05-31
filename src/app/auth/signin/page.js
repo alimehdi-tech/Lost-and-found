@@ -5,6 +5,7 @@ import { signIn, getSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({
@@ -58,18 +59,17 @@ export default function SignIn() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
-        <div>
-          <div className="mx-auto h-12 w-12 bg-black rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">LF</span>
-          </div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        <div className='flex justify-center items-center flex-col'>
+          
+        <Image src="/logo.png" width={150} height={100} alt="logo" />
+          <h2 className=" text-center text-3xl font-extrabold text-gray-900">
             Sign in to your account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
             Or{' '}
             <Link
               href="/auth/signup"
-              className="font-medium text-gray-400 hover:text-black"
+              className="font-medium text-gray-400 hover:text-black underline"
             >
               create a new account
             </Link>
@@ -136,7 +136,7 @@ export default function SignIn() {
             <div className="text-sm">
               <Link
                 href="/auth/forgot-password"
-                className="font-medium text-gray-400 hover:text-black"
+                className="font-medium text-gray-400 hover:text-black underline"
               >
                 Forgot your password?
               </Link>
