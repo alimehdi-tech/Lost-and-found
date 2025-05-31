@@ -347,7 +347,7 @@ export default function EditItem() {
                   id="title"
                   name="title"
                   required
-                  className="form-input"
+                  className="form-input border-gray-300"
                   placeholder="e.g., iPhone 13 Pro, Blue Backpack, etc."
                   value={formData.title}
                   onChange={handleInputChange}
@@ -363,7 +363,7 @@ export default function EditItem() {
                     id="type"
                     name="type"
                     required
-                    className="form-select"
+                    className="form-select border-gray-300"
                     value={formData.type}
                     onChange={handleInputChange}
                   >
@@ -380,7 +380,7 @@ export default function EditItem() {
                     id="category"
                     name="category"
                     required
-                    className="form-select"
+                    className="form-select border-gray-300"
                     value={formData.category}
                     onChange={handleInputChange}
                   >
@@ -401,7 +401,7 @@ export default function EditItem() {
                   name="description"
                   rows={4}
                   required
-                  className="form-textarea"
+                  className="form-textarea border-gray-300"
                   placeholder="Provide detailed description of the item..."
                   value={formData.description}
                   onChange={handleInputChange}
@@ -417,7 +417,7 @@ export default function EditItem() {
                     id="location"
                     name="location"
                     required
-                    className="form-select"
+                    className="form-select border-gray-300"
                     value={formData.location}
                     onChange={handleInputChange}
                   >
@@ -437,7 +437,7 @@ export default function EditItem() {
                     id="dateOccurred"
                     name="dateOccurred"
                     required
-                    className="form-input"
+                    className="form-input border-gray-300"
                     value={formData.dateOccurred}
                     onChange={handleInputChange}
                     max={new Date().toISOString().split('T')[0]}
@@ -540,7 +540,7 @@ export default function EditItem() {
                 <input
                   type="text"
                   placeholder="Add a tag..."
-                  className="form-input flex-1"
+                  className="form-input flex-1 border-gray-300"
                   value={tagInput}
                   onChange={(e) => setTagInput(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addTag())}
@@ -548,7 +548,7 @@ export default function EditItem() {
                 <button
                   type="button"
                   onClick={addTag}
-                  className="btn-secondary"
+                  className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded"
                 >
                   Add
                 </button>
@@ -559,13 +559,13 @@ export default function EditItem() {
                   {formData.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800"
+                      className="inline-flex items-center px-3 py-1 rounded-full text-sm bg-gray-100 text-gray-800"
                     >
                       {tag}
                       <button
                         type="button"
                         onClick={() => removeTag(tag)}
-                        className="ml-2 text-blue-600 hover:text-blue-800"
+                        className="ml-2 text-gray-600 hover:text-gray-800"
                       >
                         <XMarkIcon className="h-3 w-3" />
                       </button>
@@ -587,7 +587,7 @@ export default function EditItem() {
                   id="isUrgent"
                   name="isUrgent"
                   type="checkbox"
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                  className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
                   checked={formData.isUrgent}
                   onChange={handleInputChange}
                 />
@@ -602,7 +602,7 @@ export default function EditItem() {
                     id="rewardOffered"
                     name="reward.offered"
                     type="checkbox"
-                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                    className="h-4 w-4 text-gray-600 focus:ring-gray-500 border-gray-300 rounded"
                     checked={formData.reward.offered}
                     onChange={handleInputChange}
                   />
@@ -621,7 +621,7 @@ export default function EditItem() {
                         type="number"
                         id="rewardAmount"
                         name="reward.amount"
-                        className="form-input"
+                        className="form-input border-gray-300"
                         placeholder="e.g., 1000"
                         value={formData.reward.amount}
                         onChange={handleInputChange}
@@ -636,7 +636,7 @@ export default function EditItem() {
                         id="rewardDescription"
                         name="reward.description"
                         rows={2}
-                        className="form-textarea"
+                        className="form-textarea border-gray-300"
                         placeholder="Describe the reward..."
                         value={formData.reward.description}
                         onChange={handleInputChange}
@@ -653,14 +653,14 @@ export default function EditItem() {
             <button
               type="button"
               onClick={() => router.back()}
-              className="btn-secondary"
+              className="bg-gray-200 text-gray-800 hover:bg-gray-300 px-4 py-2 rounded"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={saving}
-              className="btn-primary"
+              className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded"
             >
               {saving ? (
                 <div className="flex items-center">
