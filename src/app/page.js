@@ -397,7 +397,7 @@ export default function Home() {
               whileHover={{ scale: 1.03 }}
             >
               <motion.div
-                whileHover={{ rotate: [0, 5, -5, 0], scale: 1.1 }}
+                whileHover={{ rotate: [0, 5], scale: 1.1 }}
                 transition={{ type: 'spring', stiffness: 300 }}
                 className="flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-l from-black to-gray-800 text-white mx-auto"
               >
