@@ -261,7 +261,7 @@ export default function SignUp() {
               className="bg-black text-white px-4 py-2 cursor-pointer text-center rounded transition duration-300 hover:bg-gray-800 w-full justify-center"
             >
               {loading ? (
-                <div className="flex items-center">
+                <div className="flex items-center justify-center">
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
                   Creating account...
                 </div>
