@@ -59,7 +59,7 @@ export default function SignIn() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <div className="mx-auto h-12 w-12 bg-blue-600 rounded-lg flex items-center justify-center">
+          <div className="mx-auto h-12 w-12 bg-black rounded-lg flex items-center justify-center">
             <span className="text-white font-bold text-lg">LF</span>
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -69,7 +69,7 @@ export default function SignIn() {
             Or{' '}
             <Link
               href="/auth/signup"
-              className="font-medium text-blue-600 hover:text-blue-500"
+              className="font-medium text-gray-400 hover:text-black"
             >
               create a new account
             </Link>
@@ -136,7 +136,7 @@ export default function SignIn() {
             <div className="text-sm">
               <Link
                 href="/auth/forgot-password"
-                className="font-medium text-blue-600 hover:text-blue-500"
+                className="font-medium text-gray-400 hover:text-black"
               >
                 Forgot your password?
               </Link>
@@ -147,10 +147,10 @@ export default function SignIn() {
             <button
               type="submit"
               disabled={loading}
-              className="btn-primary w-full justify-center"
+              className="bg-black text-white px-4 py-2 cursor-pointer text-center rounded transition duration-300 hover:bg-gray-800  w-full justify-center"
             >
               {loading ? (
-                <div className="flex items-center">
+                <div className="flex items-center justify-center">
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
                   Signing in...
                 </div>
