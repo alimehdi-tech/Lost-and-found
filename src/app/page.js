@@ -128,13 +128,13 @@ export default function Home() {
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
                 <span className="block">UMT Lost & Found</span>
-                <span className="block text-blue-600">Portal</span>
+                <span className="block text-gray-800">Portal</span>
               </h1>
               <div className="mx-auto mt-6 max-w-2xl">
                 <p className="text-lg text-gray-500 mb-4">
                   Help your fellow students recover lost items and return found belongings.
                 </p>
-                <div className="text-xl font-medium text-blue-600 h-8 flex items-center justify-center">
+                <div className="text-xl font-medium text-black h-8 flex items-center justify-center">
                   <span>{typingText}</span>
                   <span className="animate-pulse ml-1">|</span>
                 </div>
@@ -143,14 +143,14 @@ export default function Home() {
                 <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
                   <Link
                     href="/items/lost"
-                    className="flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-blue-700 sm:px-8"
+                    className="flex items-center justify-center rounded-md border border-transparent bg-black px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 sm:px-8"
                   >
                     <MagnifyingGlassIcon className="h-5 w-5 mr-2" />
                     Browse Lost Items
                   </Link>
                   <Link
                     href="/items/post"
-                    className="flex items-center justify-center rounded-md border border-transparent bg-blue-100 px-4 py-3 text-base font-medium text-blue-700 shadow-sm hover:bg-blue-200 sm:px-8"
+                    className="flex items-center justify-center rounded-md border border-transparent bg-gray-100 px-4 py-3 text-base font-medium text-black shadow-sm hover:bg-gray-200 sm:px-8"
                   >
                     <PlusIcon className="h-5 w-5 mr-2" />
                     Post an Item
@@ -163,7 +163,7 @@ export default function Home() {
       </div>
 
       {/* Stats Section */}
-      <div className="bg-blue-600">
+      <div className="bg-gradient-to-l from-black to-gray-800 ">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {stats.map((stat) => (
@@ -249,7 +249,7 @@ export default function Home() {
             <div className="text-gray-400 text-4xl mb-4">📦</div>
             <h3 className="text-lg font-medium text-gray-900 mb-2">No items posted yet</h3>
             <p className="text-gray-500 mb-6">Be the first to post a lost or found item!</p>
-            <Link href="/items/post" className="btn-primary">
+            <Link href="/items/post" className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded">
               Post First Item
             </Link>
           </div>
@@ -258,7 +258,7 @@ export default function Home() {
         <div className="mt-12 text-center">
           <Link
             href="/items"
-            className="btn-primary"
+            className="bg-black text-white hover:bg-gray-900 px-4 py-2 rounded"
           >
             View All Items
           </Link>
@@ -279,7 +279,7 @@ export default function Home() {
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             <div className="text-center">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-l from-black to-gray-800 text-white mx-auto">
                 <span className="text-xl font-bold">1</span>
               </div>
               <h3 className="mt-4 text-lg font-medium text-gray-900">
@@ -291,7 +291,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-r from-black to-gray-800 text-white mx-auto">
                 <span className="text-xl font-bold">2</span>
               </div>
               <h3 className="mt-4 text-lg font-medium text-gray-900">
@@ -303,7 +303,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto">
+              <div className="flex items-center justify-center h-16 w-16 rounded-full bg-gradient-to-l from-black to-gray-800 text-white mx-auto">
                 <span className="text-xl font-bold">3</span>
               </div>
               <h3 className="mt-4 text-lg font-medium text-gray-900">
