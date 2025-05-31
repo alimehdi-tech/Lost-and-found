@@ -143,7 +143,7 @@ export default function FoundItems() {
                   Category
                 </label>
                 <select
-                  className="form-select"
+                  className="form-select border-gray-300"
                   value={filters.category}
                   onChange={(e) => handleFilterChange('category', e.target.value)}
                 >
@@ -163,7 +163,7 @@ export default function FoundItems() {
                 <input
                   type="text"
                   placeholder="e.g., Library, Cafeteria"
-                  className="form-input"
+                  className="form-input border-gray-300"
                   value={filters.location}
                   onChange={(e) => handleFilterChange('location', e.target.value)}
                 />
@@ -176,7 +176,7 @@ export default function FoundItems() {
                   Sort by:
                 </label>
                 <select
-                  className="form-select"
+                  className="form-select border-gray-300"
                   value={filters.sortBy}
                   onChange={(e) => handleFilterChange('sortBy', e.target.value)}
                 >
@@ -186,7 +186,7 @@ export default function FoundItems() {
                   <option value="views">Most Viewed</option>
                 </select>
                 <select
-                  className="form-select"
+                  className="form-select border-gray-300"
                   value={filters.sortOrder}
                   onChange={(e) => handleFilterChange('sortOrder', e.target.value)}
                 >
@@ -195,9 +195,9 @@ export default function FoundItems() {
                 </select>
               </div>
 
-              <button type="submit" className="btn-primary">
+              <button type="submit" className="flex items-center bg-black text-white hover:bg-gray-900 px-4 py-2 rounded">
                 <FunnelIcon className="h-4 w-4 mr-2" />
-                Apply Filters
+                  Apply Filters
               </button>
             </div>
           </form>
