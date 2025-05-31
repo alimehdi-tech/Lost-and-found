@@ -94,7 +94,7 @@ export default function SignIn() {
                 type="email"
                 autoComplete="email"
                 required
-                className="form-input mt-1"
+                className="form-input mt-1 border-none"
                 placeholder="Enter your UMT email"
                 value={formData.email}
                 onChange={handleChange}
@@ -112,7 +112,7 @@ export default function SignIn() {
                   type={showPassword ? 'text' : 'password'}
                   autoComplete="current-password"
                   required
-                  className="form-input pr-10"
+                  className="form-input pr-10 border-none"
                   placeholder="Enter your password"
                   value={formData.password}
                   onChange={handleChange}
@@ -123,9 +123,9 @@ export default function SignIn() {
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <EyeIcon className="h-5 w-5 text-gray-400" />
-                  ) : (
                     <EyeSlashIcon className="h-5 w-5 text-gray-400" />
+                  ) : (
+                    <EyeIcon className="h-5 w-5 text-gray-400" />
                   )}
                 </button>
               </div>

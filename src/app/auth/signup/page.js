@@ -109,7 +109,7 @@ export default function SignUp() {
             Or{' '}
             <Link
               href="/auth/signin"
-              className="font-medium text-gray-600 hover:text-blue-500"
+              className="font-medium text-gray-400 hover:text-gray-900"
             >
               sign in to your existing account
             </Link>
@@ -139,7 +139,7 @@ export default function SignUp() {
                 name="name"
                 type="text"
                 required
-                className="form-input mt-1"
+                className="form-input mt-1 border-none"
                 placeholder="Enter your full name"
                 value={formData.name}
                 onChange={handleChange}
@@ -155,7 +155,7 @@ export default function SignUp() {
                 name="email"
                 type="email"
                 required
-                className="form-input mt-1"
+                className="form-input mt-1 border-none"
                 placeholder="your.name@umt.edu.pk"
                 value={formData.email}
                 onChange={handleChange}
@@ -173,7 +173,7 @@ export default function SignUp() {
                 id="studentId"
                 name="studentId"
                 type="text"
-                className="form-input mt-1"
+                className="form-input mt-1 border-none"
                 placeholder="e.g., FA21-BSE-123"
                 value={formData.studentId}
                 onChange={handleChange}
@@ -188,7 +188,7 @@ export default function SignUp() {
                 id="phone"
                 name="phone"
                 type="tel"
-                className="form-input mt-1"
+                className="form-input mt-1 border-none"
                 placeholder="+92 300 1234567"
                 value={formData.phone}
                 onChange={handleChange}
@@ -205,7 +205,7 @@ export default function SignUp() {
                   name="password"
                   type={showPassword ? 'text' : 'password'}
                   required
-                  className="form-input pr-10"
+                  className="form-input pr-10 border-none"
                   placeholder="Create a strong password"
                   value={formData.password}
                   onChange={handleChange}
@@ -216,9 +216,9 @@ export default function SignUp() {
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? (
-                    <EyeIcon className="h-5 w-5 text-gray-400" />
-                  ) : (
                     <EyeSlashIcon className="h-5 w-5 text-gray-400" />
+                  ) : (
+                    <EyeIcon className="h-5 w-5 text-gray-400" />
                   )}
                 </button>
               </div>
@@ -234,7 +234,7 @@ export default function SignUp() {
                   name="confirmPassword"
                   type={showConfirmPassword ? 'text' : 'password'}
                   required
-                  className="form-input pr-10"
+                  className="form-input pr-10 border-none"
                   placeholder="Confirm your password"
                   value={formData.confirmPassword}
                   onChange={handleChange}
@@ -245,9 +245,9 @@ export default function SignUp() {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 >
                   {showConfirmPassword ? (
-                    <EyeIcon className="h-5 w-5 text-gray-400" />
-                  ) : (
                     <EyeSlashIcon className="h-5 w-5 text-gray-400" />
+                  ) : (
+                    <EyeIcon className="h-5 w-5 text-gray-400" />
                   )}
                 </button>
               </div>
@@ -258,7 +258,7 @@ export default function SignUp() {
             <button
               type="submit"
               disabled={loading}
-              className="btn-primary w-full justify-center"
+              className="bg-black text-white px-4 py-2 cursor-pointer text-center rounded transition duration-300 hover:bg-gray-800 w-full justify-center"
             >
               {loading ? (
                 <div className="flex items-center">
