@@ -20,8 +20,14 @@ export async function GET(request, { params }) {
 
     const claim = await Claim.findById(params.id)
       .populate('claimant', 'name email studentId phone')
-      .populate('item', 'title description type category location images user')
-      .populate('item.user', 'name email')
+      .populate({
+        path: 'item',
+        select: 'title description type category location images postedBy',
+        populate: {
+          path: 'postedBy',
+          select: 'name email'
+        }
+      })
       .lean();
 
     if (!claim) {

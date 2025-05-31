@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import AdminImage from '@/components/admin/AdminImage';
 import {
   MagnifyingGlassIcon,
   FunnelIcon,
@@ -232,35 +232,30 @@ export default function ItemsManagement() {
         {filteredItems.map((item) => (
           <div key={item._id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
             {/* Item Image */}
-            <div className="relative h-48 bg-gray-200">
-              {item.images && item.images.length > 0 ? (
-                <Image
-                  src={item.images[0]}
-                  alt={item.title}
-                  fill
-                  className="object-cover"
-                />
-              ) : (
-                <div className="flex items-center justify-center h-full text-gray-400">
-                  <span>No Image</span>
-                </div>
-              )}
-              
+            <div className="relative">
+              <AdminImage
+                src={item.images && item.images.length > 0 ? item.images[0].url : null}
+                alt={item.title}
+                fill
+                className="h-48"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+
               {/* Status Badge */}
               <div className="absolute top-2 left-2">
                 <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                  item.type === 'lost' 
-                    ? 'bg-red-100 text-red-800' 
+                  item.type === 'lost'
+                    ? 'bg-red-100 text-red-800'
                     : 'bg-green-100 text-green-800'
                 }`}>
                   {item.type}
                 </span>
               </div>
-              
+
               <div className="absolute top-2 right-2">
                 <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
-                  item.status === 'active' 
-                    ? 'bg-yellow-100 text-yellow-800' 
+                  item.status === 'active'
+                    ? 'bg-yellow-100 text-yellow-800'
                     : item.status === 'resolved'
                     ? 'bg-green-100 text-green-800'
                     : 'bg-gray-100 text-gray-800'
@@ -294,7 +289,7 @@ export default function ItemsManagement() {
               
               <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-500">
-                  By: {item.user?.name || 'Unknown'}
+                  By: {item.postedBy?.name || 'Unknown'}
                 </span>
                 
                 <div className="flex space-x-2">
@@ -385,14 +380,14 @@ export default function ItemsManagement() {
                   <div className="mb-6">
                     <div className="grid grid-cols-2 gap-4">
                       {selectedItem.images.map((image, index) => (
-                        <div key={index} className="relative h-48 bg-gray-200 rounded-lg overflow-hidden">
-                          <Image
-                            src={image}
-                            alt={`${selectedItem.title} ${index + 1}`}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
+                        <AdminImage
+                          key={index}
+                          src={image.url}
+                          alt={`${selectedItem.title} ${index + 1}`}
+                          fill
+                          className="h-48 rounded-lg overflow-hidden"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
                       ))}
                     </div>
                   </div>
@@ -424,7 +419,7 @@ export default function ItemsManagement() {
                     </div>
                     <div>
                       <span className="text-sm font-medium text-gray-500">Posted by:</span>
-                      <p className="text-sm text-gray-900">{selectedItem.user?.name || 'Unknown'}</p>
+                      <p className="text-sm text-gray-900">{selectedItem.postedBy?.name || 'Unknown'}</p>
                     </div>
                     <div>
                       <span className="text-sm font-medium text-gray-500">Date:</span>

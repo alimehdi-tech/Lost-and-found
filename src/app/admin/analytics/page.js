@@ -5,8 +5,8 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import {
   ChartBarIcon,
-  TrendingUpIcon,
-  TrendingDownIcon,
+  ArrowTrendingUpIcon,
+  ArrowTrendingDownIcon,
   CalendarIcon,
   DocumentArrowDownIcon,
   EyeIcon,
@@ -81,7 +81,7 @@ export default function Analytics() {
     return {
       value: Math.abs(trend).toFixed(1),
       isPositive,
-      icon: isPositive ? TrendingUpIcon : TrendingDownIcon,
+      icon: isPositive ? ArrowTrendingUpIcon : ArrowTrendingDownIcon,
       color: isPositive ? 'text-green-600' : 'text-red-600'
     };
   };

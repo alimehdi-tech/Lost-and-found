@@ -29,7 +29,7 @@ export async function GET(request) {
     }
 
     const claims = await Claim.find(query)
-      .populate('item', 'title type category location')
+      .populate('item', 'title type category location images')
       .populate('claimant', 'name email avatar')
       .populate('itemOwner', 'name email avatar')
       .sort({ createdAt: -1 })

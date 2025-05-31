@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import AdminImage from '@/components/admin/AdminImage';
 import {
   MagnifyingGlassIcon,
   CheckCircleIcon,
@@ -418,14 +418,14 @@ export default function ClaimsManagement() {
                       <div className="mb-4">
                         <div className="grid grid-cols-2 gap-2">
                           {selectedClaim.item.images.map((image, index) => (
-                            <div key={index} className="relative h-32 bg-gray-200 rounded overflow-hidden">
-                              <Image
-                                src={image}
-                                alt={`${selectedClaim.item.title} ${index + 1}`}
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
+                            <AdminImage
+                              key={index}
+                              src={image.url}
+                              alt={`${selectedClaim.item.title} ${index + 1}`}
+                              fill
+                              className="h-32 rounded overflow-hidden"
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                            />
                           ))}
                         </div>
                       </div>

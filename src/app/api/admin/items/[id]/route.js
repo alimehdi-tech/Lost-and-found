@@ -18,7 +18,7 @@ export async function GET(request, { params }) {
     await connectDB();
 
     const item = await Item.findById(params.id)
-      .populate('user', 'name email studentId')
+      .populate('postedBy', 'name email studentId')
       .lean();
 
     if (!item) {
@@ -132,7 +132,7 @@ export async function PATCH(request, { params }) {
       params.id,
       { ...updateFields, updatedAt: new Date() },
       { new: true }
-    ).populate('user', 'name email studentId');
+    ).populate('postedBy', 'name email studentId');
 
     if (!item) {
       return NextResponse.json(
