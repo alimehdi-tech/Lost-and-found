@@ -23,7 +23,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Lost Items', href: '/items/lost' },
   { name: 'Found Items', href: '/items/found' },
-  { name: 'My Dashboard', href: '/dashboard' },
+  
   { name: 'Messages', href: '/chat/list' },
 ];
 
@@ -79,8 +79,8 @@ export default function Navbar() {
             </div>
 
             {/* Desktop navigation */}
-            <div className="hidden md:ml-10 md:block">
-              <div className="flex space-x-8">
+            <div className="hidden md:ml-10 md:flex items-center">
+              <div className="flex space-x-2">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
@@ -91,22 +91,20 @@ export default function Navbar() {
                   </Link>
                 ))}
               </div>
+              <Link href="/dashboard" className='ml-8' passHref>
+  <button className="relative inline-flex overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+    <span className="inline-flex items-center justify-center rounded-full bg-white px-3 py-1 text-sm font-medium text-black backdrop-blur-3xl">
+      Dashboard
+    </span>
+  </button>
+</Link>
+
+
             </div>
           </div>
 
-          {/* Search bar */}
-          {/* <div className="flex-1 max-w-lg mx-8 hidden lg:block">
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
-              </div>
-              <input
-                type="text"
-                placeholder="Search lost or found items..."
-                className="block w-[85%] pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-              />
-            </div>
-          </div> */}
+         
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
