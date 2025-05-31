@@ -3,17 +3,20 @@
 import { useState, useEffect } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { 
+import Link from 'next/link';
+import {
   ChartBarIcon,
   UserGroupIcon,
   ExclamationTriangleIcon,
   CheckCircleIcon,
   ClockIcon,
   EyeIcon,
-  ArchiveBoxIcon,
-  FunnelIcon
+  DocumentChartBarIcon,
+  UsersIcon,
+  ShoppingBagIcon,
+  ClipboardDocumentListIcon
 } from '@heroicons/react/24/outline';
-import Navbar from '@/components/layout/Navbar';
+import AdminLayout from '@/components/admin/AdminLayout';
 
 export default function AdminDashboard() {
   const { data: session, status } = useSession();
@@ -147,37 +150,89 @@ export default function AdminDashboard() {
 
   if (status === 'loading' || loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-          <div className="animate-pulse">
-            <div className="h-8 bg-gray-200 rounded w-1/4 mb-8"></div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[...Array(6)].map((_, i) => (
-                <div key={i} className="bg-white p-6 rounded-lg shadow">
-                  <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
-                  <div className="h-8 bg-gray-200 rounded w-1/2"></div>
-                </div>
-              ))}
-            </div>
+      <AdminLayout>
+        <div className="animate-pulse">
+          <div className="h-8 bg-gray-200 rounded w-1/4 mb-8"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="bg-white p-6 rounded-lg shadow">
+                <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                <div className="h-8 bg-gray-200 rounded w-1/2"></div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </AdminLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
-      
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
-          <p className="mt-2 text-gray-600">
-            Manage lost and found items, claims, and user activities
-          </p>
+    <AdminLayout>
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+        <p className="mt-2 text-gray-600">
+          Manage lost and found items, claims, and user activities
+        </p>
+      </div>
+
+      {/* Quick Actions */}
+      <div className="mb-8">
+        <h2 className="text-lg font-medium text-gray-900 mb-4">Quick Actions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <Link
+            href="/admin/users"
+            className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200"
+          >
+            <div className="flex items-center">
+              <UsersIcon className="h-8 w-8 text-blue-600" />
+              <div className="ml-3">
+                <p className="text-sm font-medium text-gray-900">Manage Users</p>
+                <p className="text-xs text-gray-500">View and edit users</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/admin/items"
+            className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200"
+          >
+            <div className="flex items-center">
+              <ShoppingBagIcon className="h-8 w-8 text-green-600" />
+              <div className="ml-3">
+                <p className="text-sm font-medium text-gray-900">Manage Items</p>
+                <p className="text-xs text-gray-500">Review all items</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/admin/claims"
+            className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200"
+          >
+            <div className="flex items-center">
+              <ClipboardDocumentListIcon className="h-8 w-8 text-yellow-600" />
+              <div className="ml-3">
+                <p className="text-sm font-medium text-gray-900">Review Claims</p>
+                <p className="text-xs text-gray-500">Process pending claims</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/admin/analytics"
+            className="bg-white p-4 rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200"
+          >
+            <div className="flex items-center">
+              <DocumentChartBarIcon className="h-8 w-8 text-purple-600" />
+              <div className="ml-3">
+                <p className="text-sm font-medium text-gray-900">View Analytics</p>
+                <p className="text-xs text-gray-500">System reports</p>
+              </div>
+            </div>
+          </Link>
         </div>
+      </div>
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
@@ -391,7 +446,6 @@ export default function AdminDashboard() {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+    </AdminLayout>
   );
 }

@@ -225,7 +225,7 @@ export default function Chat() {
                             className="h-10 w-10 rounded-full object-cover"
                           />
                         ) : (
-                          <div className="h-10 w-10 rounded-full bg-blue-500 flex items-center justify-center">
+                          <div className="h-10 w-10 rounded-full bg-gray-500 flex items-center justify-center">
                             <span className="text-sm font-medium text-white">
                               {otherUser.name?.charAt(0)?.toUpperCase() || 'U'}
                             </span>
@@ -315,7 +315,7 @@ export default function Chat() {
                               className="h-8 w-8 rounded-full object-cover"
                             />
                           ) : (
-                            <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center">
+                            <div className="h-8 w-8 rounded-full bg-gray-500 flex items-center justify-center">
                               <span className="text-xs font-medium text-white">
                                 {senderName?.charAt(0)?.toUpperCase() || 'U'}
                               </span>
@@ -336,7 +336,7 @@ export default function Chat() {
                         <div
                           className={`px-4 py-2 rounded-lg relative ${
                             isOwn
-                              ? 'bg-blue-600 text-white rounded-br-sm'
+                              ? 'bg-gray-500 text-white rounded-br-sm'
                               : 'bg-gray-200 text-gray-900 rounded-bl-sm'
                           } ${message.sending ? 'opacity-70' : ''}`}
                         >
@@ -413,7 +413,7 @@ export default function Chat() {
               <button
                 type="submit"
                 disabled={sending || !newMessage.trim()}
-                className="btn-primary"
+                className="bg-gray-200 text-gray-800 hover:bg-gray-300 px-4 py-2 rounded"
               >
                 {sending ? (
                   <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
