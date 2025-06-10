@@ -5,8 +5,8 @@ import { validateUMTEmail, generateVerificationToken } from '@/lib/auth';
 
 export async function POST(request) {
   try {
-    const { name, email, password, studentId, phone } = await request.json();
-
+    const body = await request.json();
+const { name, email, password, studentId, phone } = body;
     // Validate required fields
     if (!name || !email || !password) {
       return NextResponse.json(
