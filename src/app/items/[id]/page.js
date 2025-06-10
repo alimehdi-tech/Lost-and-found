@@ -86,7 +86,7 @@ export default function ItemDetail() {
   };
 
   const handleDelete = async () => {
-    if (!confirm('Are you sure you want to delete this item? This action cannot be undone.')) {
+    if (!confirm("Are you sure you want to delete this item? This action cannot be undone.")) {
       return;
     }
 
@@ -97,7 +97,7 @@ export default function ItemDetail() {
       });
 
       if (response.ok) {
-        router.push('/dashboard');
+        router.push("/dashboard");
       } else {
         const data = await response.json();
         alert(data.error || 'Failed to delete item');
@@ -196,10 +196,10 @@ export default function ItemDetail() {
               <div className="card-body">
                 {item.images && item.images.length > 0 ? (
                   <div className="space-y-4">
-                    {/* Main Image */}
+              
                     <div className="aspect-w-16 aspect-h-12">
                       <img
-                        src={item.images[selectedImage]?.url || '/placeholder-image.jpg'}
+                        src={item.images[selectedImage]?.url || "/placeholder-image.jpg"}
                         alt={item.title}
                         className="w-full h-96 object-cover rounded-lg"
                       />

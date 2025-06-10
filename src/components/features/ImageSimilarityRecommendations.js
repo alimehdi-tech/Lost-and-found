@@ -196,7 +196,7 @@ export default function ImageSimilarityRecommendations({
           <SparklesIcon className="h-12 w-12 text-gray-400 mx-auto mb-4" />
           <h4 className="text-lg font-medium text-gray-900 mb-2">No Similar Items Found</h4>
           <p className="text-gray-600">
-            We couldn't find any visually similar items at the moment. 
+            We couldnot find any visually similar items at the moment. 
             Try adjusting your search criteria or check back later.
           </p>
         </div>
