@@ -419,7 +419,7 @@ export default function ItemsManagement() {
                     </div>
                     <div>
                       <span className="text-sm font-medium text-gray-500">Posted by:</span>
-                      <p className="text-sm text-gray-900">{selectedItem.postedBy?.name || 'Unknown'}</p>
+                      <p className="text-sm text-gray-900">{selectedItem.postedBy?.name || "Unknown"}</p>
                     </div>
                     <div>
                       <span className="text-sm font-medium text-gray-500">Date:</span>

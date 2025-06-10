@@ -292,16 +292,15 @@ export default function ItemDetail() {
                 </div>
 
                 <div className="space-y-3">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <MapPinIcon className="h-4 w-4 mr-2" />
-                    <span>{item.type === 'lost' ? 'Lost at' : 'Found at'}: {item.location}</span>
-                  </div>
+                <div className="flex items-center text-sm text-gray-600">
+  <MapPinIcon className="h-4 w-4 mr-2" />
+  <span>{`${item.type === 'lost' ? 'Lost at' : 'Found at'}: ${item.location}`}</span>
+</div>
 
-                  <div className="flex items-center text-sm text-gray-600">
-                    <CalendarIcon className="h-4 w-4 mr-2" />
-                    <span>{item.type === 'lost' ? 'Lost on' : 'Found on'}: {formatDate(item.dateOccurred)}</span>
-                  </div>
-
+<div className="flex items-center text-sm text-gray-600">
+  <CalendarIcon className="h-4 w-4 mr-2" />
+  <span>{`${item.type === 'lost' ? 'Lost on' : 'Found on'}: ${formatDate(item.dateOccurred)}`}</span>
+</div>
                   <div className="flex items-center text-sm text-gray-600">
                     <EyeIcon className="h-4 w-4 mr-2" />
                     <span>{item.views || 0} views</span>
